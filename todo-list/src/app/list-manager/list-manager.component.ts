@@ -10,14 +10,15 @@ import {TodoListService} from "../services/todo-list.service";
   standalone: true,
   imports: [CommonModule, InputButtonUnitComponent, TodoItemComponent],
   template: `
-    <div class = "todo-app">
-    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
+    <div class="todo-app">
+      <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
-    <ul>
-      <li *ngFor="let todo of todoList">
-        <app-todo-item [item]="todo"></app-todo-item>
-      </li>
-    </ul>
+      <ul>
+        <li *ngFor="let todoItem of todoList">
+          <app-todo-item [item]="todoItem"
+                         (remove)="removeItem(todoItem)"> </app-todo-item>
+        </li>
+      </ul>
     </div>
   `,
   styleUrl: './list-manager.component.scss'
@@ -30,5 +31,8 @@ export class ListManagerComponent {
   }
   addItem(title: string) {
     this.todoListService.addItem({ title });
+  }
+  removeItem(item: TodoItem) {
+    this.todoListService.deleteItem(item);
   }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TodoItem } from '../interfaces/todo-item';
 import {TodoItemComponent} from "../todo-item/todo-item.component";
 import {InputButtonUnitComponent} from "../input-button-unit/input-button-unit.component";
+import {TodoListService} from "../services/todo-list.service";
 
 @Component({
   selector: 'app-list-manager',
@@ -22,16 +23,12 @@ import {InputButtonUnitComponent} from "../input-button-unit/input-button-unit.c
   styleUrl: './list-manager.component.scss'
 })
 export class ListManagerComponent {
-  todoList: TodoItem[] = [
-    {title: 'install NodeJS'},
-    {title: 'install Angular CLI'},
-    {title: 'create new app'},
-    {title: 'serve app'},
-    {title: 'develop app'},
-    {title: 'deploy app'},
-  ];
+  todoList: TodoItem[];
 
+  constructor(private todoListService: TodoListService) {
+    this.todoList = this.todoListService.getTodoList();
+  }
   addItem(title: string) {
-    this.todoList.push({ title });
+    this.todoListService.addItem({ title });
   }
 }

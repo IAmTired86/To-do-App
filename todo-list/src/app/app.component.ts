@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InputButtonUnitComponent],
+  imports: [RouterOutlet, InputButtonUnitComponent, CommonModule],
   template: `
     <h1>
       Welcome to {{ title }}!

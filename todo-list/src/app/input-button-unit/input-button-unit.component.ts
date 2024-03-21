@@ -6,15 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>
-      input-button-unit works!
-      The title is: {{ title }}
-    </p>
-
-    <input [value]="title"
+    {{title}}
+    <input #inputElementRef
+           [value]="title"
            (keyup.enter)="changeTitle(getInputValue($event))">
 
-    <button (click)="changeTitle('Button Clicked!')">
+    <button (click)="changeTitle(inputElementRef.value)">
       Save
     </button>
   `,

@@ -9,6 +9,7 @@ import {InputButtonUnitComponent} from "../input-button-unit/input-button-unit.c
   standalone: true,
   imports: [CommonModule, InputButtonUnitComponent, TodoItemComponent],
   template: `
+    <div class = "todo-app">
     <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
     <ul>
@@ -16,6 +17,7 @@ import {InputButtonUnitComponent} from "../input-button-unit/input-button-unit.c
         <app-todo-item [item]="todo"></app-todo-item>
       </li>
     </ul>
+    </div>
   `,
   styleUrl: './list-manager.component.scss'
 })

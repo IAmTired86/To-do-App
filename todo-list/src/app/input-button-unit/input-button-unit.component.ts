@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <input #inputElementRef
-           [value]="title"
-           (keyup.enter)="submitValue(getInputValue($event))">
+    <input  class="todo-input"
+            #inputElementRef
+            [value]="title"
+            (keyup.enter)="submitValue(getInputValue($event))">
 
-    <button (click)="submitValue(inputElementRef.value)">
+    <button class="btn"
+            (click)="submitValue(inputElementRef.value)">
       Save
     </button>
   `,

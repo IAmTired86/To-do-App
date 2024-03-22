@@ -19,7 +19,7 @@ import {NgClass} from "@angular/common";
 </span>
 
       <button class="btn btn-red" (click)="removeItem()">
-        remove
+        Remove
       </button>
     </div>
   `,

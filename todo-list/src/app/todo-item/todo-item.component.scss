@@ -10,11 +10,14 @@
 .todo-checkbox {
   flex-shrink: 0;
   margin: auto 1ex auto 0;
+  width: 20px;
+  height: 20px;
 }
 
 .todo-title {
   flex-grow: 1;
   padding-left: 11px;
+  font-weight: bold;
 }
 .todo-complete {
   text-decoration: line-through;

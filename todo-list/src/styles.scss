@@ -8,7 +8,7 @@ h1, p, ul, li {
 }
 
 body {
-  background: #f1f1f1;
+  background: #3a3737;
   font-size: 16px;
   line-height: 22px;
   color: #404040;
@@ -30,6 +30,7 @@ ol, ul {
   line-height: 24px;
   cursor: pointer;
   vertical-align: bottom;
+  outline: white solid 2px;
 }
 
 .btn:hover {
@@ -38,6 +39,8 @@ ol, ul {
 
 .btn-red {
   background: red;
+  font-weight: bold;
+  outline: white solid 2px;
 }
 
 .btn-red:hover {
